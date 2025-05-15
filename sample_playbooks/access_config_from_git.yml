@@ -5,7 +5,7 @@
 
   vars:
     config_file_path: "configs/{{ inventory_hostname }}.cfg"
-  connection: network_cli
+  #connection: network_cli
   #collections:
   #  - dellemc.os10
 
