@@ -22,7 +22,7 @@
       #command: cat "{{ config_file_path }}"
       #command: cat "{{ inventory_hostname }}"
       copy:
-        src: "{{ inventory_hostname }}"
+        src: "{{ config_file_path }}"
         dest: /tmp/
       register: config_restore_result
 
