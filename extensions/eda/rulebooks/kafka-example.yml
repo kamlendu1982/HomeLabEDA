@@ -5,6 +5,7 @@
   sources:   
     - ansible.eda.kafka:
         host: my-kafka-cluster-kafka-listener1-bootstrap-openshift-operators.apps.iceargo.sandbox3056.opentlc.com
+        port: 443
         #port: 9092
         topic: eda-test-events
 
