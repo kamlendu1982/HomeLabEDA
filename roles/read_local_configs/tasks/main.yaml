@@ -8,8 +8,8 @@
     var: the_curr_dir
         
 - name: get the content of a cfg
-  #command: cat "{{ config_file_path }}"
-  command: cat "{{ inventory_hostname }}"
+  command: cat "{{ config_file_path }}"
+  #command: cat "{{ inventory_hostname }}"
   register: config_restore_result
 
 - name: Display config restore result

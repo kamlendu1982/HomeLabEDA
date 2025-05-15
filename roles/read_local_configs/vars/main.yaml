@@ -1,2 +1,2 @@
 ---
-config_file_path: "sample_playbooks/configs/{{ inventory_hostname }}.cfg"
+config_file_path: "files/{{ inventory_hostname }}.cfg"
