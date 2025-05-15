@@ -1,0 +1,19 @@
+---
+- name: Restore Dell OS10 Configuration
+  hosts: all
+  gather_facts: false
+
+  vars:
+    config_file_path: "configs/{{ inventory_hostname }}.cfg"
+  connection: network_cli
+  #collections:
+  #  - dellemc.os10
+
+  tasks:
+    - name: get the content of a cfg
+      command: cat "{{ config_file_path }}"
+      register: config_restore_result
+
+    - name: Display config restore result
+      debug:
+        var: config_restore_result
