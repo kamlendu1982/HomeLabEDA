@@ -4,7 +4,7 @@
   ## Define our source for events
   sources:   
     - ansible.eda.kafka:
-        host: my-kafka-external-openshift-operators.apps.iceargo.sandbox3056.opentlc.com
+        host: my-kafka-cluster-kafka-listener1-bootstrap-openshift-operators.apps.iceargo.sandbox3056.opentlc.com
         #port: 9092
         topic: eda-test-events
 
