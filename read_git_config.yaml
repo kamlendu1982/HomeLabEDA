@@ -1,0 +1,7 @@
+---
+- name: read_config
+  hosts: all 
+  gather_facts: false
+  #become: true
+  roles:
+    - read_local_configs

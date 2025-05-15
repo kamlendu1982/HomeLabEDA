@@ -1,0 +1,17 @@
+---
+- name: get the current dir
+  command: pwd
+  register: the_curr_dir
+
+- name: show the pwd
+  debug:
+    var: the_curr_dir
+        
+- name: get the content of a cfg
+  #command: cat "{{ config_file_path }}"
+  command: cat "{{ inventory_hostname }}"
+  register: config_restore_result
+
+- name: Display config restore result
+  debug:
+    var: config_restore_result
