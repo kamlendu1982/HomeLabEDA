@@ -4,7 +4,7 @@
   gather_facts: false
 
   vars:
-    config_file_path: "configs/{{ inventory_hostname }}.cfg"
+    config_file_path: "sample_playbooks/configs/{{ inventory_hostname }}.cfg"
   #connection: network_cli
   #collections:
   #  - dellemc.os10
