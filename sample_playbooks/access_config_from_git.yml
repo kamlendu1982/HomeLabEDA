@@ -20,7 +20,10 @@
         
     - name: get the content of a cfg
       #command: cat "{{ config_file_path }}"
-      command: cat "{{ inventory_hostname }}"
+      #command: cat "{{ inventory_hostname }}"
+      copy:
+        src: "{{ inventory_hostname }}"
+        dest: /tmp/
       register: config_restore_result
 
     - name: Display config restore result
