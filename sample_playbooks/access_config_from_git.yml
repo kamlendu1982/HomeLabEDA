@@ -31,10 +31,10 @@
         var: config_content
       register: config_restore_result
 
-    - name: Display config restore result
+    - name: Display compare
       debug:
         var: test_str
-      when: config_restore.content != config_running.content
+      when: config_restore_result.content != config_running.content
 
 
 
