@@ -5,19 +5,12 @@
 
   vars:
     config_file_path: "sample_playbooks/configs/{{ inventory_hostname }}.cfg"
+    test_str: "This is a test"
   #connection: network_cli
   #collections:
   #  - dellemc.os10
 
   tasks:
-    - name: get the current dir
-      command: pwd
-      register: the_curr_dir
-
-    - name: show the pwd
-      debug:
-        var: the_curr_dir
-        
     - name: get the content of a cfg
       set_fact:
         config_content: "{{ lookup('file', config_file_path) }}"
@@ -26,8 +19,22 @@
       #copy:
       #  src: "{{ config_file_path }}"
       #  dest: /tmp/
-      register: config_restore_result
+      register: config_restore
+
+    - name: set fact to compare
+      set_fact:
+        config_to_comp: "This is running config"
+      register: config_running
 
     - name: Display config restore result
       debug:
         var: config_content
+      register: config_restore_result
+
+    - name: Display config restore result
+      debug:
+        var: test_str
+      when: config_restore.content != config_running.content
+
+
+
