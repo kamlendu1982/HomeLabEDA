@@ -28,7 +28,8 @@
 
     - name: Display config restore result
       debug:
-        var: config_content
+        #var: config_content
+        var: config_running
       register: config_restore_result
 
     - name: Display compare
