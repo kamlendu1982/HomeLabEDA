@@ -35,7 +35,7 @@
     - name: Display compare
       debug:
         var: test_str
-      when: config_restore_result.config_running.ansible_facts.config_to_comp != config_running.stdout
+      when: config_restore_result.config_restore.ansible_facts.config_content != config_running.ansible_facts.config_to_comp
 
 
 
