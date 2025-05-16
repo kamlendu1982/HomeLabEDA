@@ -4,9 +4,8 @@
   ## Define our source for events
   sources:   
     - ansible.eda.kafka:
-        host: my-kafka-cluster-kafka-listener1-bootstrap-openshift-operators.apps.iceargo.sandbox3056.opentlc.com
-        port: 443
-        #port: 9092
+        host: my-kafka-cluster-kafka-bootstrap.openshift-operators.svc.cluster.local
+        port: 9092
         topic: eda-test-events
 
   ## Define the conditions we are looking for
