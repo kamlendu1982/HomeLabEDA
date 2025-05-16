@@ -29,13 +29,13 @@
     - name: Display config restore result
       debug:
         #var: config_content
-        var: config_running
+        var: config_restore
       register: config_restore_result
 
     - name: Display compare
       debug:
         var: test_str
-      when: config_restore_result.content != config_running.content
+      when: config_restore_result.config_running.ansible_facts.config_to_comp != config_running.stdout
 
 
 
