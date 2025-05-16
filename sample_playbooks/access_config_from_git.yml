@@ -23,7 +23,7 @@
 
     - name: set fact to compare
       set_fact:
-        config_to_comp: "This is running config"
+        config_to_comp: "This is test config"
       register: config_running
 
     - name: Display config restore result
