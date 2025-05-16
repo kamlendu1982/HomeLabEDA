@@ -19,13 +19,15 @@
         var: the_curr_dir
         
     - name: get the content of a cfg
+      set_fact:
+        config_content: "{{ lookup('file', config_file_path) }}"
       #command: cat "{{ config_file_path }}"
       #command: cat "{{ inventory_hostname }}"
-      copy:
-        src: "{{ config_file_path }}"
-        dest: /tmp/
+      #copy:
+      #  src: "{{ config_file_path }}"
+      #  dest: /tmp/
       register: config_restore_result
 
     - name: Display config restore result
       debug:
-        var: config_restore_result
+        var: config_content
